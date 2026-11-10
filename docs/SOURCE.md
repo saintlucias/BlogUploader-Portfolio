@@ -1,38 +1,35 @@
-# 출처와 검증 범위
+# 원본과 실행 환경
 
 [프로젝트 소개로 돌아가기](../README.md)
 
 ## 원본 기준
 
-- 원본 저장소: [saintlucias/BlogUploader](https://github.com/saintlucias/BlogUploader)
-- 로컬 체크아웃의 origin: 위 저장소와 일치.
-- 기준 버전: `package.json`의 `0.1.31`.
-- 기준 커밋: [`58573ae6854cf8dd0944eabcecfe5a03c22d60fa`](https://github.com/saintlucias/BlogUploader/commit/58573ae6854cf8dd0944eabcecfe5a03c22d60fa)
-- 문서·캡처 작성일: 2026-11-10, Asia/Seoul.
-
-GitHub 원격 조회가 네트워크 제한으로 실패하여, **현재 원격 최신 커밋과 같은지는 확인하지 못했습니다.** 이 포트폴리오는 위 로컬 커밋을 기준으로 합니다.
-
-## 확인한 자료
-
-| 자료 | 확인한 내용 |
+| 항목 | 값 |
 | --- | --- |
-| 원본 README·package.json | 기능 개요, 실행 방식, 정확한 패키지 버전 |
-| features·StoreManagerApp | 실제 화면, 초안 전환·저장과 게시 준비 흐름 |
-| Route Handler·서버 모듈 | 데이터 저장, 업로드, GPT 구조화 응답, 계정 확인, 브라우저 준비 잠금 |
-| database·backup-manager | 버전 보관, 작업별 결과 기록, 스냅샷·복원 |
-| 격리된 실행 환경 | 데모 데이터 저장, 화면 전환, 원고 탭 전환, 미리보기 모달, 설정 조회 |
+| 원본 저장소 | [saintlucias/BlogUploader](https://github.com/saintlucias/BlogUploader) |
+| 기준 버전 | v0.1.31 |
+| 기준 커밋 | [`58573ae`](https://github.com/saintlucias/BlogUploader/commit/58573ae6854cf8dd0944eabcecfe5a03c22d60fa) |
+| 화면 캡처일 | 2026-11-10, Asia/Seoul |
 
-## 이번 작업의 검증 범위
+## 실행 환경
 
-1. 운영 DB와 업로드 경로를 분리한 로컬 개발 서버를 실행했습니다.
-2. 시연용 매장 정보와 초안 저장 API의 정상 응답을 확인했습니다.
-3. 실제 UI에서 7개 화면을 캡처하고 이미지 내용을 검토했습니다.
-4. 포트폴리오 문서의 로컬 링크·이미지 참조와 ZIP 구성을 점검했습니다.
+| 항목 | 구성 |
+| --- | --- |
+| 운영체제 | Windows |
+| 런타임 | Node.js 24.11.1 |
+| 앱 실행 | Next.js 개발 서버 |
+| 화면 캡처 | Google Chrome headless, 1600 × 1100 CSS px |
+| 데이터 | 운영 데이터와 분리한 SQLite DB, 기본 예시 원고·사진, 시연용 매장 프로필 |
+| 외부 서비스 | 계정 로그인·GPT 호출·외부 게시 미실행 |
 
-이 검증은 문서·화면 자료의 일치 여부를 확인한 것입니다. 전체 테스트·프로덕션 빌드·Electron 설치 패키지·외부 플랫폼 자동화·GPT 생성은 이번 작업에서 실행하지 않았습니다. 이전 보고서의 통과 기록을 새 검증 결과로 표시하지 않았습니다.
+## 원본 코드 구성
 
-## 공개 자료에 포함한 범위
+| 영역 | 주요 내용 |
+| --- | --- |
+| `features/` | 화면별 UI, 초안 전환·저장, 게시 준비 흐름 |
+| `app/api/` | 매장·초안·이미지·작업 이력·자동화 요청 처리 |
+| `lib/server/` | SQLite, GPT 응답 처리, 계정 확인, 브라우저 자동화, 백업·복원 |
+| `electron/` | 데스크톱 창과 내부 서버 생명주기 관리 |
+| `tests/` | Node 테스트와 네이버 편집기 fixture |
 
-Markdown 문서와 실제 앱 캡처 PNG만 포함합니다. 운영 DB, 환경변수 파일, API 키, 로그인 쿠키·브라우저 프로필, 사용자 업로드와 설치 파일은 포함하지 않습니다. 사진은 원본 저장소의 기본 예시 이미지가 앱 화면에 표시된 것입니다.
-
-확인되지 않은 개발 기간·팀 규모·개인 기여율·사용자 수·효율 개선 수치는 기재하지 않았습니다. 라이선스나 제3자 이미지의 재배포 권한을 새로 부여하는 문서는 포함하지 않았습니다.
+전체 실행 코드와 개발 안내는 [원본 저장소](https://github.com/saintlucias/BlogUploader)에서 확인할 수 있음.
