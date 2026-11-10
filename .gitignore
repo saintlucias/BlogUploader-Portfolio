@@ -1,0 +1,8 @@
+.DS_Store
+Thumbs.db
+.env*
+*.db
+*.db-*
+node_modules/
+browser-profiles/
+*.zip
